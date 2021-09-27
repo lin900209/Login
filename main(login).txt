@@ -1,0 +1,26 @@
+import 'package:flutter_app/theme.dart';
+
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      //拿掉畫面右上角的debug
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: theme(),
+      /*
+      當底下的頁面有很多的時候，需要在 MaterialApp 中定義Routes 並且
+      同時設定 initialRoute，這樣進入 App 的時候，就會先進入 initRoutes，
+      再利用 Navigator 切換不同的頁面(Route)
+      initialRoute 是啓動APP的初始頁面，也就是用戶看到的第一個頁面
+      */
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
+    );
+  }
+}
